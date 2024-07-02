@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Gram Panchayat Login</title>
+  <link rel="stylesheet" href="e-grampanchayatcss.css">
+</head>
+<body>
+    <div class="container">
+    <div class="con1">
+    <h1>Digital E gram panchayat system</h1>
+    <h2>Login form</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="errorMessage"></p>
+ </div>
+<!---- div--> 
+<div class="pad2">
+  <h1>E-Gram Panchayat - Employee Master</h1>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search by name or ID" class="btn1">
+    <button onclick="searchEmployees()" class="searchbtn">Search</button>
+  </div>
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Designation</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<div class="pad2">
+  <h1>E-Gram Panchayat - Designation Master</h1>
+  <div class="form-container">
+    <h2>Add Designation</h2>
+    <form id="designationForm">
+      <label for="designationName">Designation Name:</label>
+      <input type="text" id="designationName" name="designationName" required>
+      <button type="submit">Add Designation</button>
+    </form>
+  </div>
+  <table id="designationTable">
+    <thead>
+      <tr>
+        <th>Designation ID</th>
+        <th>Designation Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<div class="pad2">
+<h1>E-Gram Panchayat - Connection Type Master</h1>
+<div class="form-container">
+  <h2>Add Connection Type</h2>
+  <form id="connectionTypeForm">
+    <label for="connectionTypeName">Connection Type Name:</label>
+    <input type="text" id="connectionTypeName" name="connectionTypeName" required>
+    <button type="submit">Add Connection Type</button>
+  </form>
+</div>
+<table id="connectionTypeTable">
+  <thead>
+    <tr>
+      <th>Connection Type ID</th>
+      <th>Connection Type Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</div>
+<div class="pad2">
+<h1>e-Gram Panchayat - All Connections</h1>
+    <div id="connection-table-container">
+    </div>
+        <table id="connection-table">
+            <thead>
+                <tr>
+                    <th>Connection ID</th>
+                    <th>Connection Type</th>
+                    <th>Applicant Name</th>
+                    <th>Applicant Address</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="loading-message">Loading connections...</div>
+        <div id="error-message">Error fetching connections. Please try again later.</div>
+    </div>
+ <div class="pad2">
+  <header>
+    <h1>E-Gram Digital Panchayat</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <h2>Welcome to [Your Panchayat Name]</h2>
+      <p>This website provides information and services to citizens of our panchayat.</p>
+    </section>
+    <section>
+      <h2>Important Announcements</h2>
+      </section>
+    <section>
+      <h2>Citizen Services</h2>
+      <ul>
+        <li><a href="#">Birth Certificate Application</a></li>
+        <li><a href="#">Grievance Redressal Form</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; [Your Panchayat Name] 2024</p>
+  </footer>
+    </div>
+  <div>
+    <body>
+        <h1>e-Gram Digital Panchayat - Connection Cancellation</h1>
+        <p>Currently, connection cancellation cannot be directly performed through this interface. However, we can guide you through the cancellation process.</p>
+        <section id="options">
+            <h2>Cancellation Options</h2>
+            <ul>
+                <li><a href="#">Contact e-Gram Support (https://egramswaraj.gov.in/)</a></li>
+                <li><a href="#">Visit Your Local Panchayat Office</a></li>
+            </ul>
+        </section>
+
+   </div>
+
+  <div>
+    <h1>Janm Dakhla (Birth Registration)</h1>
+    <form id="birthRegistrationForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="childName">Child's Name:</label>
+            <input type="text" id="childName" name="childName" required>
+        </div>
+        <div class="form-group">
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+        </div>
+        <div class="form-group">
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit Registration</button>
+        </div>
+        <div id="message"></div> </form>
+  </div>
+    <script src="e-grampanchayatjs.js"></script>
+
+</div>
+</body>
+</html>
